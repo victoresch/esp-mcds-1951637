@@ -14,3 +14,22 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('hola-mundo',function(){
+    return 'Hola esto es una prueba de una ruta basica usando LARAVEL';
+});
+
+Route::post('/hola-mundo',function(){
+    return 'Hola esto es una prueba de una ruta basica usando LARAVEL';
+});
+//Route::match(['get','post'],'contacto',function(){
+//    return view('contacto');
+//});
+
+Route::get('/contacto/{nombre?}',function($nombre="Victor"){
+    return view('contacto.contacto',Array(
+        "nombre"=>$nombre
+    ));
+});
+
+?>
